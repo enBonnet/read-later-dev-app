@@ -10,7 +10,7 @@ export default function PostWrapper() {
   return (
     <Fragment>
       {state.toReadPosts.length > 0 && (
-        <p>
+        <p className="nav_item">
           <Link to="/toread">
             You have {state.toReadPosts.length} posts to read
           </Link>

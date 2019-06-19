@@ -11,17 +11,17 @@ nav {
   font-weight: bold;
 }
 
+a:focus,
+button:focus {
+  outline: none;
+}
+
 button.read {
   background-color: rgb(221, 160, 221);
   color: #ffffff;
   font-weight: bold;
   box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.297);
   padding: 8px;
-}
-
-a:focus,
-button:focus {
-  outline: none;
 }
 
 button.read:hover {
@@ -45,6 +45,10 @@ body {
   padding-bottom: 50px;
 }
 
+.nav_item {
+  text-align: center;
+}
+
 .card {
   margin-top: 32px;
   border-radius: 8px;
@@ -53,10 +57,6 @@ body {
   width: 400px;
   text-align: center;
   background-color: #ffffff;
-}
-
-.card:hover {
-  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.297);
 }
 
 .card a {
