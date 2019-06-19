@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect, Suspense, lazy } from "react";
+import "./App.css";
+
+const PostsWrapper = lazy(() => import("./PostsWrapper"));
 
 function App() {
+  const [posts, setPosts] = useState([]);
+
+  const fetchPosts = async (page = 1, tag = "react") => {
+    const data = await fetch(
+      `https://dev.to/api/articles?page=${page}&tag=${tag}`
+    );
+    const dataJSON = await data.json();
+    setPosts(dataJSON);
+  };
+
+  useEffect(() => {
+    posts.length === 0 && fetchPosts();
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      {console.log(posts)}
+      <header>
+        <nav>Read later you favotire React post from Dev.to</nav>
       </header>
+      <section>
+        <Suspense fallback={<div>Loading...</div>}>
+          <PostsWrapper posts={posts} />
+        </Suspense>
+      </section>
     </div>
   );
 }

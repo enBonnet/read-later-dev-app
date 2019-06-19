@@ -1,33 +1,70 @@
-.App {
-  text-align: center;
+button {
+  border-radius: 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+nav {
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button.read {
+  background-color: rgb(221, 160, 221);
+  color: #ffffff;
+  font-weight: bold;
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.297);
+  padding: 8px;
+}
+
+button.read:hover {
+  box-shadow: none;
+}
+
+body {
+  background-color: #f2f2f2;
+}
+
+.App header {
+  display: flex;
+  justify-content: center;
+}
+
+.App section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 0px;
+  padding-bottom: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+  margin-top: 32px;
+  border-radius: 8px;
+  box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.297);
+  padding: 16px;
+  width: 400px;
+  text-align: center;
+  background-color: #ffffff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card:hover {
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.297);
+}
+
+.card a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+.card p {
+  font-size: 14px;
+}
+
+.cover_image {
+  width: 300px;
+  margin-bottom: 8px;
 }
