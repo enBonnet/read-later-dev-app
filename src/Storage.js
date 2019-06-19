@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React, { createContext, useEffect } from "react";
 
 export const Storage = createContext();
 
@@ -29,5 +29,10 @@ function reducer(state, action) {
 export function StorageProvider({ children }) {
   const [state, dispatch] = React.useReducer(reducer, initialState);
   const value = { state, dispatch };
+
+  useEffect(() => {
+    localStorage.setItem("state", JSON.stringify(initialState));
+  });
+
   return <Storage.Provider value={value}>{children}</Storage.Provider>;
 }

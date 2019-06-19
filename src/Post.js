@@ -6,7 +6,7 @@ export default function Post({ post }) {
   const { state, dispatch } = useContext(Storage);
 
   return (
-    <div className="card" key={post.id}>
+    <div className="card">
       {post.cover_image && (
         <img className="cover_image" alt={post.title} src={post.cover_image} />
       )}

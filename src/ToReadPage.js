@@ -20,7 +20,7 @@ export default function PostWrapper() {
 
       <Suspense fallback={<div>Loading...</div>}>
         {state.toReadPosts.map(post => (
-          <Post post={post} />
+          <Post post={post} key={post.id} />
         ))}
       </Suspense>
     </Fragment>
