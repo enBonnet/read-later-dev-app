@@ -1,6 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
+import { Router } from "@reach/router";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+import App from "./App";
+import HomePage from "./HomePage";
+import ToReadPage from "./ToReadPage";
+
+import { StorageProvider } from "./Storage";
+import "./index.css";
+
+ReactDOM.render(
+  <StorageProvider>
+    <Router>
+      <App path="/">
+        <HomePage path="/" />
+        <ToReadPage path="/toread" />
+      </App>
+    </Router>
+  </StorageProvider>,
+  document.getElementById("root")
+);

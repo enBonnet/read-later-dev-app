@@ -3,6 +3,7 @@ button {
   border: none;
   background: none;
   cursor: pointer;
+  width: 100%;
 }
 
 nav {
@@ -18,6 +19,11 @@ button.read {
   padding: 8px;
 }
 
+a:focus,
+button:focus {
+  outline: none;
+}
+
 button.read:hover {
   box-shadow: none;
 }
@@ -27,8 +33,8 @@ body {
 }
 
 .App header {
-  display: flex;
-  justify-content: center;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .App section {
