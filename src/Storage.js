@@ -1,4 +1,4 @@
-import React, { createContext, useEffect } from "react";
+import React, { createContext, useEffect, useReducer } from "react";
 import reducer from "./reducers";
 
 export const Storage = createContext();
@@ -15,7 +15,7 @@ const getInitialState = () => {
 };
 
 export function StorageProvider({ children }) {
-  const [state, dispatch] = React.useReducer(reducer, getInitialState());
+  const [state, dispatch] = useReducer(reducer, getInitialState());
   const value = { state, dispatch };
 
   useEffect(() => {
