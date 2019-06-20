@@ -14,7 +14,7 @@ ReactDOM.render(
     <Router>
       <App path="/">
         <HomePage path="/" />
-        <ToReadPage path="/toread" />
+        <ToReadPage path="toread" />
       </App>
     </Router>
   </StorageProvider>,
