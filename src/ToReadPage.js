@@ -1,5 +1,6 @@
 import React, { Fragment, useContext, Suspense, lazy } from "react";
-import { Link } from "@reach/router";
+// import { Link } from "@reach/router";
+import { Link } from "react-router-dom";
 import { Storage } from "./Storage";
 
 const Post = lazy(() => import("./Post"));

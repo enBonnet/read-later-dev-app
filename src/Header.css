@@ -38,7 +38,7 @@ body {
   text-align: center;
 }
 
-.App section {
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
