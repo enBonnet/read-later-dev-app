@@ -18,6 +18,7 @@ button:focus {
 
 button.read {
   background-color: rgb(221, 160, 221);
+  font-size: 16px;
   color: #ffffff;
   font-weight: bold;
   box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.297);

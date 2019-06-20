@@ -10,12 +10,12 @@ export default function PostWrapper() {
   return (
     <Fragment>
       <p className="nav_item">
-        <p>You have {state.toReadPosts.length} left</p>
-        {state.toReadPosts.length === 0 && (
-          <p>
-            Go <Link to="/">home</Link> and get new one
-          </p>
+        {state.toReadPosts.length > 0 && (
+          <p>You have {state.toReadPosts.length} left</p>
         )}
+        <p>
+          Go <Link to="/">home</Link> and get new one
+        </p>
       </p>
 
       <Suspense fallback={<div>Loading...</div>}>

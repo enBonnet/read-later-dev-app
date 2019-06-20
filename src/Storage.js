@@ -1,37 +1,29 @@
 import React, { createContext, useEffect } from "react";
+import reducer from "./reducers";
 
 export const Storage = createContext();
 
-const initialState = {
-  posts: [],
-  toReadPosts: []
+const getInitialState = () => {
+  if (localStorage.getItem("state")) {
+    return JSON.parse(localStorage.getItem("state"));
+  }
+
+  return {
+    posts: [],
+    toReadPosts: []
+  };
 };
 
-function reducer(state, action) {
-  switch (action.type) {
-    case "FETCH_POSTS":
-      return { ...state, posts: action.payload };
-    case "ADD_TOREAD":
-      return {
-        ...state,
-        toReadPosts: [...state.toReadPosts, action.payload]
-      };
-    case "REMOVE_TOREAD":
-      return {
-        ...state,
-        toReadPosts: action.payload
-      };
-    default:
-      return state;
-  }
-}
-
 export function StorageProvider({ children }) {
-  const [state, dispatch] = React.useReducer(reducer, initialState);
+  const [state, dispatch] = React.useReducer(reducer, getInitialState());
   const value = { state, dispatch };
 
   useEffect(() => {
-    localStorage.setItem("state", JSON.stringify(initialState));
+    if (localStorage.getItem("state")) {
+      localStorage.setItem("state", JSON.stringify(state));
+    } else {
+      localStorage.setItem("state", JSON.stringify(getInitialState()));
+    }
   });
 
   return <Storage.Provider value={value}>{children}</Storage.Provider>;
