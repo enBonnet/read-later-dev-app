@@ -12,11 +12,13 @@ import "./index.css";
 ReactDOM.render(
   <StorageProvider>
     <Router>
-      <Header />
-      <section className="content">
-        <Route path="/" exact component={HomePage} />
-        <Route path="/toread" component={ToReadPage} />
-      </section>
+      <div className="container">
+        <Header />
+        <section className="content">
+          <Route path="/" exact component={HomePage} />
+          <Route path="/toread" component={ToReadPage} />
+        </section>
+      </div>
     </Router>
   </StorageProvider>,
   document.getElementById("root")

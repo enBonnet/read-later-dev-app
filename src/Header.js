@@ -11,10 +11,8 @@ export default function Header() {
   });
 
   return (
-    <div className="App">
-      <header>
-        <nav>Read later you favotire React post from Dev.to</nav>
-      </header>
-    </div>
+    <header>
+      <nav>Read later you favotire React post from Dev.to</nav>
+    </header>
   );
 }

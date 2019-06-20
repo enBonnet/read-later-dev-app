@@ -33,9 +33,13 @@ body {
   background-color: #f2f2f2;
 }
 
-.App header {
+header {
   margin-top: 20px;
   text-align: center;
+}
+
+#root {
+  margin: 0 30px;
 }
 
 .content {
@@ -55,8 +59,9 @@ body {
   border-radius: 8px;
   box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.297);
   padding: 16px;
-  width: 400px;
   text-align: center;
+  width: 100%;
+  max-width: 400px;
   background-color: #ffffff;
 }
 
@@ -72,6 +77,6 @@ body {
 }
 
 .cover_image {
-  width: 300px;
+  width: 100%;
   margin-bottom: 8px;
 }
